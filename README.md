@@ -23,15 +23,34 @@ It wrote the code, ran away, and now the game is unplayable.
    - Run `pytest` in your terminal.
    - Keep fixing until all tests pass!
 
-## 📝 Document Your Experience
+## 📝 My Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+### Game Purpose
+
+A number guessing game where the player picks a difficulty, gets a secret number in a range, and tries to guess it within a limited number of attempts. The app gives higher/lower hints after each guess and tracks a running score.
+
+### Bugs Found
+
+| 1 | Hint messages were swapped — "Too High" said "Go HIGHER!" and "Too Low" said "Go LOWER!" | `check_guess` in `app.py` |
+| 2 | Secret was cast to a string on even-numbered attempts, breaking numeric comparison | `app.py` submit block |
+| 3 | Negative numbers and out-of-range values were accepted (no range validation) | `parse_guess` |
+| 4 | "Too High" guesses on even attempts awarded +5 points instead of deducting -5 | `update_score` |
+| 5 | New game button did not reset score, history, or game status | `app.py` new_game block |
+| 6 | Attempts counter started at 1 instead of 0, making the first guess count as attempt 2 | `app.py` session state init |
+
+### Fixes Applied
+
+- Moved all four logic functions (`check_guess`, `parse_guess`, `get_range_for_difficulty`, `update_score`) out of `app.py` into `logic_utils.py` and updated the import.
+- Fixed hint messages so "Too High" → "Go LOWER!" and "Too Low" → "Go HIGHER!".
+- Removed the even/odd string cast on the secret number so comparisons are always numeric.
+- Added range validation to `parse_guess` so values outside `[low, high]` are rejected without consuming an attempt.
+- Fixed `update_score` to always deduct 5 points for wrong guesses regardless of attempt parity.
+- Fixed the new game reset to clear score, history, attempts, and status.
+- Added 11 pytest cases covering all fixed bugs — all passing.
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- [![alt text](image.png) ] 
 
 ## 🚀 Stretch Features
 

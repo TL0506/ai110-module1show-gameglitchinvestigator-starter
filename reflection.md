@@ -33,7 +33,7 @@ I decided if a bug was really fixed when I went to test the bugs manual to see i
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 
----
+Streamlit reruns your entire Python script from top to bottom which it runs the whole entire code (a fresh new copy of your website basically)
 
 ## 5. Looking ahead: your developer habits
 
@@ -41,3 +41,5 @@ I decided if a bug was really fixed when I went to test the bugs manual to see i
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+For git, I learned that reverting code is super easy just by a press of a button to what you had before. Next time when working with AI is to ask and mention more specific details about the code. Also, Make it explain to me the code since I couldn't actually fully understand everything. This project made me understand that AI generated code can make your task alot easier and less work, but if your not specific enough it might have issues that you have to understand and fix. 

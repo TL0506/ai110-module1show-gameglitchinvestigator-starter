@@ -8,7 +8,9 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
 
----
+One bug that I noticed is that you can guess a negative number when it said to guess between 1-100. I guessed 2 and it said to go lower, so I put a negative number and it told me to go lower still.
+Another bug that I noticed is that the history duplicates your guess once before it puts your next guess. ex: i put 3 first then 100, in the history it says 3 3 100.
+Third thing I noticed is that the new game button is broken. I pressed it and the attempts changes, but submitting a guess wouldn't work because it would say "Game over. Start A new game to try again"
 
 ## 2. How did you use AI as a teammate?
 

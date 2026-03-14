@@ -11,7 +11,7 @@ def get_range_for_difficulty(difficulty: str):
     return 1, 100
 
 
-def parse_guess(raw: str):
+def parse_guess(raw: str):          #Fix Me: Doesn't have check for negative numbers. This function should be moved to logic_utils.py and imported here.
     if raw is None:
         return False, None, "Enter a guess."
 
@@ -101,7 +101,7 @@ if "score" not in st.session_state:
 if "status" not in st.session_state:
     st.session_state.status = "playing"
 
-if "history" not in st.session_state:
+if "history" not in st.session_state:   #Fix Me: This should be initialized when the game starts, but it doesn't reset when starting a new game. This function should be moved to logic_utils.py and imported here.
     st.session_state.history = []
 
 st.subheader("Make a guess")
@@ -131,7 +131,7 @@ with col2:
 with col3:
     show_hint = st.checkbox("Show hint", value=True)
 
-if new_game:
+if new_game:  #Fix Me: This should reset the game state and start a new game, but it doesn't reset the score or history. This function should be moved to logic_utils.py and imported here.
     st.session_state.attempts = 0
     st.session_state.secret = random.randint(1, 100)
     st.success("New game started.")
